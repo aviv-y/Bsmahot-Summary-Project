@@ -1,0 +1,33 @@
+{
+  "name": "summaryprjct",
+  "version": "1.0.0",
+  "description": "A mediation site between professionals and event owners",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Aviv Mali",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.1",
+    "mongoose": "^5.13.7",
+    "multer": "^1.4.4",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
+    "pdfmake": "^0.2.7",
+    "puppeteer": "^21.11.0",
+    "socket.io": "^4.4.1",
+    "uuid": "^9.0.1"
+  },
+  "proxy": "http: // localhost: 3080"
+}
