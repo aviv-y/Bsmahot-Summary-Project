@@ -161,6 +161,8 @@ const cors = require("cors");
 
 dotenv.config();
 
+app.use(cors());
+
 setInterval(() => {
   console.log("hi!");
 }, 86400000);
@@ -191,6 +193,20 @@ const corsOptions = {
 
 // Use CORS middleware
 app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
+});
+
 
 // חילוץ הטוקן בכל בקשת גישה
 // app.use('/', (req, res, next) => {
