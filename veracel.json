@@ -1,20 +1,50 @@
+
 {
-     "version": 2, 
-    "rewrites": 
-    [{ 
-        "source": "/(.*)", 
-        "destination": "/api" 
-        }],
-    "builds": [
-        {
-            "src": "./app.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
+  "version": 2,
+  "routes": [
+    { "src": "/api/hello", "dest": "/api/hello" },
+    { "src": "/api/signUpPUser", "dest": "/api/signUpPUser" },
+    { "src": "/api/loginPUser", "dest": "/api/loginPUser" },
+    { "src": "/api/reqResetPass", "dest": "/api/reqResetPass" },
+    { "src": "/api/resetPass", "dest": "/api/resetPass" },
+    { "src": "/api/showPUser", "dest": "/api/showPUser" },
+    { "src": "/api/updatePUser", "dest": "/api/updatePUser" },
+    { "src": "/api/creatChatRoom", "dest": "/api/creatChatRoom" },
+    { "src": "/api/signUpBUser", "dest": "/api/signUpBUser" },
+    { "src": "/api/loginBUser", "dest": "/api/loginBUser" },
+    { "src": "/api/showBUser", "dest": "/api/showBUser" },
+    { "src": "/api/creatBChatRoom", "dest": "/api/creatBChatRoom" },
+    { "src": "/api/showBUByProf", "dest": "/api/showBUByProf" },
+    { "src": "/api/updateBUser", "dest": "/api/updateBUser" },
+    { "src": "/api/addProfession", "dest": "/api/addProfession" },
+    { "src": "/api/showAllProfession", "dest": "/api/showAllProfession" },
+    { "src": "/api/addSProfession", "dest": "/api/addSProfession" },
+    { "src": "/api/showSubProfession", "dest": "/api/showSubProfession" },
+    { "src": "/api/addRemark", "dest": "/api/addRemark" },
+    { "src": "/api/sendReminder", "dest": "/api/sendReminder" },
+    { "src": "/api/showRemarkByBUserId", "dest": "/api/showRemarkByBUserId" },
+    { "src": "/api/newEvent", "dest": "/api/newEvent" },
+    { "src": "/api/sendMess", "dest": "/api/sendMess" },
+    { "src": "/api/commentMess", "dest": "/api/commentMess" },
+    { "src": "/api/showMess", "dest": "/api/showMess" },
+    { "src": "/api/showChatR", "dest": "/api/showChatR" },
+    { "src": "/api/showEvents", "dest": "/api/showEvents" },
+    { "src": "/api/showEventById", "dest": "/api/showEventById" },
+    { "src": "/api/updateEvent", "dest": "/api/updateEvent" },
+    { "src": "/api/addNotice", "dest": "/api/addNotice" },
+    { "src": "/api/addContract", "dest": "/api/addContract" },
+    { "src": "/api/sendAttachment", "dest": "/api/sendAttachment" },
+    { "src": "/api/showContract", "dest": "/api/showContract" },
+    { "src": "/api/updateContract", "dest": "/api/updateContract" },
+    { "src": "/api/showContractByIdEvent", "dest": "/api/showContractByIdEvent" },
+    { "src": "/api/showAllContracts", "dest": "/api/showAllContracts" },
+    { "src": "/api/upload-image", "dest": "/api/upload-image" },
+    { "src": "/api/getImagesByIdUser", "dest": "/api/getImagesByIdUser" }
+  ],
+  "builds": [
+    {
+      "src": "./app.js",
+      "use": "@vercel/node"
+    }
+  ]
 }
