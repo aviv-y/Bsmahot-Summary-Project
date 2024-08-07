@@ -287,6 +287,11 @@ const path = require("path");
 dotenv.config();
 
 app.use(cors());
+app.use(
+  cors({
+    origin: "https://besmachot.netlify.app",
+  })
+);
 
 const connectionParams = {
   useNewUrlParser: true,
