@@ -11,7 +11,7 @@ const contract = require("../controllers/Contract.controller");
 const Image = require('../controllers/Image.controller')
 
 /** Privet User **/
-router.get('/hello', pUser.hello);
+// router.get('/hello', pUser.hello);
 router.post('/signUpPUser', pUser.signUpPUser);
 router.post('/loginPUser', pUser.loginPUser);
 router.post('/reqResetPass', pUser.requestResetPassword);
@@ -31,7 +31,7 @@ router.post('/updateBUser', bUser.updateBUser);
 
 /** Professions **/
 router.post('/addProfession', prfsn.addProfession);
-router.get('/showAllProfession', prfsn.showAllProfession);
+router.post('/showAllProfession', prfsn.showAllProfession);
 
 /** Sub Professions **/
 router.post('/addSProfession', sPrfsn.addSProfession);
