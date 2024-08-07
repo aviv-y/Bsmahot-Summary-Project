@@ -403,8 +403,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", routerApi);
 
 app.use((error, req, res, next) => {
-  console.log('error!!:(');
-  
+  console.error("Error stack:", error.stack);
+  console.error("Request URL:", req.url);
+  console.error("Request method:", req.method);
+  console.error("Request body:", req.body);
   res.status(500).json({ error: error.message });
 });
 
