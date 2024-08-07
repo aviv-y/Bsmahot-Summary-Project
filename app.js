@@ -390,7 +390,9 @@ mongoose
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.post("*", (req, res) => {
+app.get("*", (req, res) => {
+  console.log('hello world!');
+  
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
@@ -401,6 +403,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", routerApi);
 
 app.use((error, req, res, next) => {
+  console.log('error!!:(');
+  
   res.status(500).json({ error: error.message });
 });
 

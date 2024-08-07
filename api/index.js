@@ -13,7 +13,11 @@ const corsOptions = {
 // Use CORS middleware
 app.use(cors(corsOptions));
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => {
+  console.log("hi!!");
+
+  res.send("Express on Vercel");
+});
 
 app.listen(4000, () => console.log("Server ready on port 4000."));
 
