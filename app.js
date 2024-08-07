@@ -275,6 +275,81 @@
 //     }
 //   });
 // });
+// const express = require("express");
+// const app = express();
+// const dotenv = require("dotenv");
+// const bodyParser = require("body-parser");
+// const mongoose = require("mongoose");
+// const routerApi = require("./routers/api");
+// const cors = require("cors");
+// const path = require("path");
+
+// dotenv.config();
+
+// app.use(cors());
+// app.use(
+//   cors({
+//     origin: "https://besmachot.netlify.app",
+//   })
+// );
+
+// const connectionParams = {
+//   useNewUrlParser: true,
+//   useCreateIndex: true,
+//   useUnifiedTopology: true,
+// };
+
+// mongoose
+//   .connect(process.env.DB_CONNECT, connectionParams)
+//   .then(() => {
+//     console.log("connected!!");
+//   })
+//   .catch((err) => {
+//     console.log(`error connecting${err}`);
+//   });
+
+// // Serve static files from the React app
+// app.use(express.static(path.join(__dirname, 'client/build')));
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
+
+// const corsOptions = {
+//   origin: "*",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   allowedHeaders:
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+// };
+
+// app.use(cors(corsOptions));
+
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   if (req.method === "OPTIONS") {
+//     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+//     return res.status(200).json({});
+//   }
+//   next();
+// });
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+// // ייבוא ה-API
+// app.use("/api", routerApi);
+
+// app.use((error, req, res, next) => {
+//   res.status(500).json({ error: error.message });
+// });
+
+// const server = app.listen(process.env.PORT, () => {
+//   console.log("connect!!!");
+// });
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
@@ -286,12 +361,15 @@ const path = require("path");
 
 dotenv.config();
 
-app.use(cors());
-app.use(
-  cors({
-    origin: "https://besmachot.netlify.app",
-  })
-);
+// קונפיגורציה של CORS
+const corsOptions = {
+  origin: "https://besmachot.netlify.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders:
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+};
+
+app.use(cors(corsOptions));
 
 const connectionParams = {
   useNewUrlParser: true,
@@ -309,32 +387,10 @@ mongoose
   });
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
-const corsOptions = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders:
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-};
-
-app.use(cors(corsOptions));
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-    return res.status(200).json({});
-  }
-  next();
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
 app.use(bodyParser.json());
