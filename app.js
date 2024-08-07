@@ -282,6 +282,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routerApi = require("./routers/api");
 const cors = require("cors");
+const path = require("path");
 
 dotenv.config();
 
