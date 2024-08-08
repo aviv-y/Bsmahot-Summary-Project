@@ -31,7 +31,7 @@ router.post('/updateBUser', bUser.updateBUser);
 
 /** Professions **/
 router.post('/addProfession', prfsn.addProfession);
-router.get('/showAllProfession', prfsn.showAllProfession);
+router.post("/showAllProfession", prfsn.showAllProfession);
 
 /** Sub Professions **/
 router.post('/addSProfession', sPrfsn.addSProfession);
