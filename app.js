@@ -413,7 +413,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // ייבוא ה-API
-app.use("/api", routerApi);
+app.use("/", routerApi);
 
 app.use((error, req, res, next) => {
   console.error("Error stack:", error.stack);
