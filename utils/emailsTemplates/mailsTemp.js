@@ -1,5 +1,6 @@
 const htmlTemp = (type, name, token, details, attachment, reactURL) => {
-
+    console.log(reactURL);
+    
     let client, contractBtn;
     if (details && type=="sendMess") {
         if(details.details[0].userType === "1")
