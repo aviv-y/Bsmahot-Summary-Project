@@ -1,4 +1,4 @@
-const htmlTemp = (type, name, token, details, attachment) => {
+const htmlTemp = (type, name, token, details, attachment, reactURL) => {
 
     let client, contractBtn;
     if (details && type=="sendMess") {
@@ -9,7 +9,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					    color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/CommentMess?token=${token}&contract=y">
+                            href="${reactURL}/CommentMess?token=${token}&contract=y">
                             אני מעוניין לחתום חוזה!
                         </a>
                     </td>`;
@@ -21,7 +21,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					    color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/Contract?token=${token}">
+                            href="${reactURL}/Contract?token=${token}">
                             לעריכת חוזה
                         </a>
                     </td>`;
@@ -139,7 +139,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                                             style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                                             bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                                                href="${process.env.REACT_APP_API_URL}/ResetPass?token=${token}">
+                                                href="${reactURL}/ResetPass?token=${token}">
                                                 איפוס סיסמא
                                             </a>
                                         </td>
@@ -276,7 +276,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/CommentMess?token=${token}">
+                            href="${reactURL}/CommentMess?token=${token}">
                             לתגובה
                         </a>
                     </td>
@@ -342,7 +342,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/SignClient?token=${token}">
+                            href="${reactURL}/SignClient?token=${token}">
                             לחתימה
                         </a>
                     </td>
@@ -412,7 +412,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/Home">
+                            href="${reactURL}/Home">
                             לאתר שלנו
                         </a>
                     </td>
@@ -485,7 +485,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/Home">
+                            href="${reactURL}/Home">
                             לאתר שלנו
                         </a>
                     </td>
@@ -560,7 +560,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}/feedback?event=${token}">
+                            href="${reactURL}/feedback?event=${token}">
                             להוספת התגובה שלך
                         </a>
                     </td>
@@ -637,7 +637,7 @@ const htmlTemp = (type, name, token, details, attachment) => {
                         style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
                         bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 100%;"
-                            href="${process.env.REACT_APP_API_URL}">
+                            href="${reactURL}">
                             לאתר שלנו
                         </a>
                     </td>
