@@ -4,6 +4,8 @@ const mailsTemp = require('./emailsTemplates/mailsTemp')
 function sendmail(type, email, name, token, details, attachment) {
     let html = mailsTemp.htmlTemp(type, name, token, details, attachment, process.env.REACT_APP_API_URL); //פונקציה הבוחרת איזה מייל לשלוח
     console.log("**********************"+process.env.REACT_APP_API_URL);
+    console.log("**********************" + process.env.MY_PASSWORD_MAIL);
+    console.log("**********************" + process.env.MY_ADRESS_MAIL);
 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
