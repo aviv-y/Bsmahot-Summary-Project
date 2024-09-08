@@ -5,9 +5,10 @@
       "name": "my-node-app",
       "env": "node",
       "plan": "free",
-      "buildCommand": "npm install --force",
+      "buildCommand": "npm install --legacy-peer-deps --force",
       "startCommand": "node app.js",
       "autoDeploy": true
     }
   ]
 }
+
